@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <Title>Kochbuch</Title>
+    </head>
+<body>
+
+    <a href="{{ url_for('index') }}">Start</a>
+    <a href="{{ url_for('recipe') }}">Rezept erfassen</a>
+    <a href="{{ url_for('logout') }}">Abmelden</a>
+    
+    <br>
+    <br>
+
+   {% for food in recipe %}
+   <table>
+    <tr> 
+        <td>
+            Rezeptname
+        </td>
+        <td> {{ food.recipename }}</td>
+    </tr>
+    <tr> 
+        <td>
+            Zutaten
+        </td>
+        <td> {{ food.ingredients }}</td>
+    </tr>
+    <tr> 
+        <td>
+            Kochanleitung
+        </td>
+        <td> {{ food.cookingistructions }}</td>
+    </tr>
+
+   </table>
+   <br>
+   {% endfor %}
+</body>
+</html>
